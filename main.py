@@ -54,3 +54,12 @@ for aluno in alunos:
 
 if emailEscolhido == None:
     print("Matrícula não encontrada.")
+
+with open('alunos.csv', 'w', newline='') as csvfile:
+    fieldnames = ['nome', 'matricula', 'telefone', 'email', 'uffmail', 'status']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+
+    for aluno in alunos:
+        writer.writerow({'nome': aluno.nome, 'matricula': aluno.matricula, 'telefone': aluno.telefone,
+                         'email': aluno.email, 'uffmail': aluno.uffMail, 'status': aluno.status })
