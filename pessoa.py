@@ -7,6 +7,9 @@ class Pessoa:
         self.uffMail = uff
         self.status = status
 
+    def __str__(self):
+        return ("Nome: "+self.nome+"\n"+"Matrícula: "+str(self.matricula)+"\n"+"Telefone: "+str(self.telefone)+
+        "\n"+"Email: "+self.email+"\n"+"Uff Mail: "+self.uffMail+"\n"+"Status: "+str(self.status)+"\n")
 
     def getNome(self):
         return self.nome
